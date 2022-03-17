@@ -112,7 +112,8 @@ t_stack	*f_stack(t_nb **a,t_nb **b)
 	t_stack *rtn;
 
 	rtn =malloc(sizeof(t_stack));
-	
+	if(!rtn)
+		return(NULL);
 	if(a)
 	{
 		rtn->a = first_node(*a);

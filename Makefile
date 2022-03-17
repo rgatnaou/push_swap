@@ -2,7 +2,7 @@ CC = cc
 
 FLAGS = -Wall -Wextra -Werror -g
 
-SRC = check_arg.c utils.c split.c list.c linked.c sort.c main.c sort_list.c
+SRC = check_arg.c utils.c split.c list.c rules.c sort.c main.c sort_list.c rr.c rrr.c ss.c pa_pb.c
 
 OBJ = $(SRC:.c=.o)
 

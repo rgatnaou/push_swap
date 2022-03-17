@@ -10,15 +10,15 @@ int main(int ac,char **av)
 	node = check_arg(av,ac);
 	check_sort(node);
 	ab = f_stack(&node,&tmp);
-
-	// printf("**%d***\n",ab->size_a);
-	// while(node->next)
-	// {
-	// 	printf("stack a:nb:%d ; index:%d ; \n",node->nb,node->index);
-	// 		node = node->next;
-	// }
-	// printf("stack a:nb:%d ; index:%d ; \n",node->nb,node->index);
 	final_sort(ab);
 	//five_node(ab);
+	node = ab->a;
+	printf("**%d***\n",ab->size_a);
+	while(node->next)
+	{
+		printf("stack a:nb:%d ; index:%d ; \n",node->nb,node->index);
+			node = node->next;
+	}
+	printf("stack a:nb:%d ; index:%d ; \n",node->nb,node->index);
 	node = ab->b;
 }

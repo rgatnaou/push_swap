@@ -86,7 +86,5 @@ t_nb	*check_arg(char **av,int ac)
 		len++;
 	while(spl[++i])
 		check_nbr(spl, i, len);
-	if(ac < 2)
-		exit(0);
 	return (fill(spl,len));
 }

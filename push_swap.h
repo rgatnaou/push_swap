@@ -49,6 +49,17 @@ void	five_node(t_stack *head);
 void 	final_sort(t_stack *ab);
 void	big_sort_pr1(t_stack *head, int part_size);
 void	check_sort(t_nb *head);
+void	sa(t_stack *ab);
+void	sb(t_stack *ab);
+void	ss(t_stack *ab);
+void	ra(t_stack *ab);
+void	rb(t_stack *ab);
+void	rr(t_stack *ab);
+void	rra(t_stack *ab);
+void	rrb(t_stack *ab);
+void	rrr(t_stack *ab);
+void	pa(t_stack *ab);
+void	pb(t_stack *ab);
 int		main(int ac,char **av);
 
 #endif
