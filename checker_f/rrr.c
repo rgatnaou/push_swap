@@ -5,12 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 14:26:27 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/17 14:59:14 by rgatnaou         ###   ########.fr       */
+/*   Created: 2022/03/23 17:30:11 by rgatnaou          #+#    #+#             */
+/*   Updated: 2022/03/23 17:30:27 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+void	reverse_rotate_node(t_nb **node)
+{
+	t_nb	*last;
+	t_nb	*first;
+
+	last = last_node(*node);
+	first = first_node(*node);
+	last->next = first;
+	first->prev = last;
+	last->prev->next = NULL;
+	last->prev = NULL;
+	*node = last;
+}
 
 void	rra(t_stack *ab)
 {
@@ -22,7 +36,7 @@ void	rra(t_stack *ab)
 	ab->a = a;
 }
 
-void	rra(t_stack *ab)
+void	rrb(t_stack *ab)
 {
 	t_nb	*b;
 
@@ -32,7 +46,7 @@ void	rra(t_stack *ab)
 	ab->b = b;
 }
 
-void	reverse_rotate_rrr(t_stack *ab)
+void	rrr(t_stack *ab)
 {
 	t_nb	*a;
 	t_nb	*b;

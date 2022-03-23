@@ -5,12 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 17:02:44 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 17:31:32 by rgatnaou         ###   ########.fr       */
+/*   Created: 2022/03/23 17:31:42 by rgatnaou          #+#    #+#             */
+/*   Updated: 2022/03/23 17:54:16 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "checker.h"
+
+int	str_char(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	if (str_len(s1) == str_len(s2))
+		return (0);
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 void	ft_free(char **str, int len)
 {

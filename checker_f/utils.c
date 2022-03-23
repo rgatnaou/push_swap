@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 18:30:56 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/19 16:46:58 by rgatnaou         ###   ########.fr       */
+/*   Created: 2022/03/23 17:15:02 by rgatnaou          #+#    #+#             */
+/*   Updated: 2022/03/23 17:15:20 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "checker.h"
 
 int	str_len(char *str)
 {

@@ -6,11 +6,25 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:31:06 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/17 16:11:59 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/23 17:18:20 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	reverse_rotate_node(t_nb **node)
+{
+	t_nb	*last;
+	t_nb	*first;
+
+	last = last_node(*node);
+	first = first_node(*node);
+	last->next = first;
+	first->prev = last;
+	last->prev->next = NULL;
+	last->prev = NULL;
+	*node = last;
+}
 
 void	rra(t_stack *ab)
 {

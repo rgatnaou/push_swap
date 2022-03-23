@@ -5,12 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 15:55:24 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/22 18:22:02 by rgatnaou         ###   ########.fr       */
+/*   Created: 2022/03/23 17:08:37 by rgatnaou          #+#    #+#             */
+/*   Updated: 2022/03/23 20:22:45 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "checker.h"
+
+int	count_list(t_nb *head)
+{
+	int	count;
+
+	count = 0;
+	if (!head)
+		return (0);
+	first_node(head);
+	while (head)
+	{
+		count++;
+		head = head->next;
+	}
+	return (count);
+}
 
 void	check_sort(t_nb *head)
 {
