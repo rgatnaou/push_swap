@@ -6,7 +6,7 @@
 #    By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 16:12:26 by rgatnaou          #+#    #+#              #
-#    Updated: 2022/03/26 15:19:31 by rgatnaou         ###   ########.fr        #
+#    Updated: 2022/03/29 14:41:29 by rgatnaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = check_arg.c utils.c split.c list.c\
 		main.c sort_list.c rr.c rrr.c ss.c pa_pb.c
 
 SRC_B = checker_f/check_arg.c checker_f/utils.c checker_f/split.c \
-		checker_f/rr.c checker_f/rrr.c checker_f/ss.c \
+		checker_f/rr.c checker_f/rrr.c checker_f/ss.c checker_f/list.c\
 		checker_f/pa_pb.c checker_f/checker.c checker_f/get_next_line.c
 
 OBJ = $(SRC:.c=.o)
@@ -31,7 +31,7 @@ NAME_B = checker
 
 HEADER = push_swap.h
 
-HEADER_B = checker.h
+HEADER_B = checker_f/checker.h
 
 all : $(NAME)
 

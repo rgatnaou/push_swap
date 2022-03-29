@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:28:41 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/29 14:14:44 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/29 14:45:19 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	pb(t_stack *ab)
 	if (!ab->size_a)
 		return ;
 	push_node(&a, &b);
-	write(1, "pb\n", 3);
 	ab->size_a--;
 	ab->size_b++;
 	ab->a = a;
@@ -83,7 +82,6 @@ void	pa(t_stack *ab)
 	if (!ab->size_b)
 		return ;
 	push_node(&b, &a);
-	write(1, "pa\n", 3);
 	ab->size_a++;
 	ab->size_b--;
 	ab->a = a;
