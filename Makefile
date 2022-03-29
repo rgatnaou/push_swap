@@ -6,7 +6,7 @@
 #    By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 16:12:26 by rgatnaou          #+#    #+#              #
-#    Updated: 2022/03/23 17:19:33 by rgatnaou         ###   ########.fr        #
+#    Updated: 2022/03/26 15:19:31 by rgatnaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = check_arg.c utils.c split.c list.c rules.c \
+SRC = check_arg.c utils.c split.c list.c\
 		main.c sort_list.c rr.c rrr.c ss.c pa_pb.c
 
 SRC_B = checker_f/check_arg.c checker_f/utils.c checker_f/split.c \

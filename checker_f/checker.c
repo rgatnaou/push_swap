@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:26:44 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 21:35:14 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/27 15:59:22 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rules_c2(char	*line, t_stack	*ab)
 		free(line);
 		free_node(ab->a);
 		free_node(ab->b);
-		free(ab)
+		free(ab);
 		exit(1);
 	}
 }
@@ -41,7 +41,7 @@ void	rules_c1(char	*line, t_stack	*ab)
 		ss(ab);
 	else if (str_char(line, "pa\n"))
 		pa(ab);
-	if (str_char(line, "pb\n"))
+	else if (str_char(line, "pb\n"))
 		pb(ab);
 	else if (str_char(line, "ra\n"))
 		ra(ab);
@@ -65,10 +65,19 @@ int	main(int ac, char **av)
 	line = get_next_line(0);
 	while (line)
 	{
+		rules_c1(line, ab);
 		free(line);
 		line = get_next_line(0);
 	}
 	free(line);
-	if()
-	
+	a = ab->a;
+	while (a)
+	{
+		printf("%d\n", a->nb);
+		a = a->next;
+	}
+	if (check_sort(ab->a))
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
 }

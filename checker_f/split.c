@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:31:42 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 17:54:16 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:37:46 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	str_char(char *s1, char *s2)
 	int	i;
 
 	i = 0;
-	if (str_len(s1) == str_len(s2))
+	if (str_len(s1) != str_len(s2))
 		return (0);
 	while (s1[i] && s2[i])
 	{

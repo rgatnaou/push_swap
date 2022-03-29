@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:10:03 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 18:38:24 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/25 22:36:11 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		str_len(char *str);
 char	*str_join(char *s1, char *s2);
 char	*str_dup(char *str, int len);
 char	**ft_split(char *str, char c);
+int		check_sort(t_nb *head);
 int		str_char(char *s1, char *s2);
 int		check_dgit(char *str);
 long	ft_atoi(char *str);

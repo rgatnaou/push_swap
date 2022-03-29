@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:13:21 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 17:37:49 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/29 09:50:55 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_stack	*f_stack(t_nb **a, t_nb **b);
 void	tree_node(t_stack *stack);
 void	five_node(t_stack *head);
 void	final_sort(t_stack *ab);
-void	big_sort_pr1(t_stack *head, int part_size);
+void	push_in_b(t_stack *head, int part_size);
 void	check_sort(t_nb *head);
 void	sa(t_stack *ab);
 void	sb(t_stack *ab);

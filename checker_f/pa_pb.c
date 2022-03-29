@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:28:41 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 20:23:31 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/29 14:14:44 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	push_node(t_nb **node1, t_nb **node2)
 	t_nb	*node_a;
 	t_nb	*node_b;
 
-	node_a = first_node(*node1);
+	node_a = *node1;
 	if (node_a->next)
 	{
 		*node1 = node_a->next;

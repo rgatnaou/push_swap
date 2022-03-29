@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:30:47 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 17:31:01 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/29 14:20:53 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	sa(t_stack *ab)
 
 	a = first_node(ab->a);
 	swap_node(&a);
-	write(1, "sa\n", 3);
 	ab->a = a;
 }
 
@@ -42,7 +41,6 @@ void	sb(t_stack *ab)
 
 	b = first_node(ab->b);
 	swap_node(&b);
-	write(1, "sb\n", 3);
 	ab->b = b;
 }
 
@@ -55,7 +53,6 @@ void	ss(t_stack *ab)
 	b = first_node(ab->b);
 	swap_node(&a);
 	swap_node(&b);
-	write(1, "ss\n", 3);
 	ab->a = a;
 	ab->b = b;
 }

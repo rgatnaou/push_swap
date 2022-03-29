@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:03:02 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 21:26:06 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/29 14:20:01 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	final_sort(t_stack *ab)
 	else
 	{
 		part_size = ab->size_a / 10 + 12;
-		big_sort_pr1(ab, part_size);
+		push_in_b(ab, part_size);
 		push_back(ab);
 	}
 }
@@ -77,12 +77,4 @@ int	main(int ac, char **av)
 	ab = f_stack(&a, &b);
 	final_sort(ab);
 	a = ab->a;
-	printf("**%d***\n", ab->size_a);
-	while (a->next)
-	{
-		printf("stack a:nb:%d ; index:%d ; \n", a->nb, a->index);
-			a = a->next;
-	}
-	printf("stack a:nb:%d ; index:%d ; \n", a->nb, a->index);
-	a = ab->b;
 }

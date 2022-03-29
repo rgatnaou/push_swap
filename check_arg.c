@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:55:24 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/22 18:22:02 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/29 11:58:55 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	check_nbr(char **spl, int i, int len)
 	{
 		if (ft_atoi(spl[j]) == ft_atoi(spl[i]))
 		{
-			write(2, "Error :Repeated Number.\n", 25);
+			write(2, "Error\n", 6);
 			ft_free(spl, len);
 			exit(1);
 		}
@@ -46,7 +46,7 @@ void	check_nbr(char **spl, int i, int len)
 	}
 	if (!check_dgit(spl[i]) || ft_atoi(spl[i]) != (int)ft_atoi(spl[i]))
 	{
-		write(2, "Error :Invalid Number.\n", 24);
+		write(2, "Error\n", 6);
 		ft_free(spl, len);
 		exit(1);
 	}
@@ -91,6 +91,11 @@ t_nb	*check_arg(char **av, int ac)
 	while (av[++i])
 		join = str_join(join, av[i]);
 	spl = ft_split(join, ' ');
+	if (!spl[0])
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	i = -1;
 	len = 0;
 	while (spl[len])

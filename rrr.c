@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:31:06 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 17:18:20 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/29 14:18:10 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	reverse_rotate_node(t_nb **node)
 	t_nb	*first;
 
 	last = last_node(*node);
-	first = first_node(*node);
+	first = *node;
 	last->next = first;
 	first->prev = last;
 	last->prev->next = NULL;
@@ -42,7 +42,7 @@ void	rrb(t_stack *ab)
 
 	b = first_node(ab->b);
 	reverse_rotate_node(&b);
-	write(1, "rra\n", 4);
+	write(1, "rrb\n", 4);
 	ab->b = b;
 }
 

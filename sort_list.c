@@ -6,106 +6,106 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:53:27 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/19 16:30:44 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/29 11:30:44 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	tree_node(t_stack *head)
+void	tree_node(t_stack *ab)
 {
-	if (head->size_a == 2)
+	if (ab->size_a == 2)
 	{	
-		if (head->a->nb > head->a->next->nb)
-			sa(head);
+		if (ab->a->nb > ab->a->next->nb)
+			sa(ab);
 	}
-	else if (head->size_a == 3)
+	else if (ab->size_a == 3)
 	{
-		if (head->a->nb > head->a->next->next->nb
-			&& head->a->nb > head->a->next->nb)
-			ra(head);
-		if (head->a->next->nb > head->a->nb
-			&& head->a->next->nb > head->a->next->next->nb)
-			rra(head);
-		if (head->a->nb > head->a->next->nb)
-			sa(head);
+		if (ab->a->nb > ab->a->next->next->nb
+			&& ab->a->nb > ab->a->next->nb)
+			ra(ab);
+		if (ab->a->next->nb > ab->a->nb
+			&& ab->a->next->nb > ab->a->next->next->nb)
+			rra(ab);
+		if (ab->a->nb > ab->a->next->nb)
+			sa(ab);
 	}
 }
 
-void	five_node(t_stack *head)
+void	five_node(t_stack *ab)
 {
 	int		i;
 
 	i = 0;
-	if (head->size_a <= 5)
+	if (ab->size_a <= 5)
 	{
 		while (i < 2)
 		{
-			if (head->a->next->index == i || head->a->next->next->index == i)
-				ra(head);
-			else if (head->a->index != i)
-				rra(head);
-			if (head->a->index == i)
+			if (ab->a->next->index == i || ab->a->next->next->index == i)
+				ra(ab);
+			else if (ab->a->index != i)
+				rra(ab);
+			if (ab->a->index == i)
 			{
-				pb(head);
+				pb(ab);
 				i++;
 			}
 		}
-		tree_node(head);
-		pa(head);
-		pa(head);
+		tree_node(ab);
+		pa(ab);
+		pa(ab);
 	}
 }
 
-void	big_sort_pr1(t_stack *head, int part_size)
+void	push_in_b(t_stack *ab, int part)
 {
-	int	part_trv;
-	int	part_max;
-	int	part_no;
+	int	trv;
+	int	max;
+	int	i;
 
-	part_no = 1;
-	part_trv = 0;
-	while (head->size_a)
+	i = 1;
+	trv = 0;
+	while (ab->size_a)
 	{
-		part_max = part_size * part_no;
-		if (head->a->index < part_max)
+		max = part * i;
+		if (ab->a->index < max)
 		{
-			pb(head);
-			if (head->b->index < part_max - (part_size / 2))
-				rb(head);
-			part_trv++;
+			pb(ab);
+			if (ab->b->index < max - (part / 2))
+				rb(ab);
+			trv++;
 		}
 		else
-			rb(head);
-		if (part_trv == part_max)
-			part_no++;
+			ra(ab);
+		if (trv == max)
+			i++;
 	}
 }
 
-int	get_max(t_stack *obj)
+int	get_max(t_stack *ab)
 {
 	t_nb	*tmp;
 	int		pos;
 
-	tmp = obj->b;
+	tmp = ab->b;
 	pos = 0;
-	while (tmp->index != obj->size_b - 1 && ++pos)
+	while (tmp->index != ab->size_b - 1 && ++pos)
 		tmp = tmp->next;
 	return (pos);
 }
 
-void	push_back(t_stack *obj)
+void	push_back(t_stack *ab)
 {
 	int	pos_max;
 
-	while (obj->size_b)
+	while (ab->size_b)
 	{
-		pos_max = get_max(obj);
+		pos_max = get_max(ab);
 		if (pos_max == 0)
-			pa(obj);
-		else if (pos_max > obj->size_b / 2)
-			rrb(obj);
+			pa(ab);
+		else if (pos_max > ab->size_b / 2)
+			rrb(ab);
 		else
-			rb(obj);
+			rb(ab);
 	}
 }

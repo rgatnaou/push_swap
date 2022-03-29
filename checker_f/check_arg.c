@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:08:37 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/23 20:22:45 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/03/26 15:29:33 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	count_list(t_nb *head)
 	return (count);
 }
 
-void	check_sort(t_nb *head)
+int	check_sort(t_nb *head)
 {
 	t_nb	*tmp;
 
@@ -39,10 +39,10 @@ void	check_sort(t_nb *head)
 	{
 		tmp = tmp->next;
 		if (tmp->prev->nb > tmp->nb)
-			return ;
+			return (0);
 	}
 	free_node(head);
-	exit(0);
+	return (1);
 }
 
 void	check_nbr(char **spl, int i, int len)
@@ -90,7 +90,8 @@ t_nb	*fill(char **spl, int len)
 		i++;
 	}
 	ft_free(spl, i);
-	check_sort(node);
+	if (check_sort(node))
+		exit(0);
 	return (node);
 }
 
@@ -101,7 +102,8 @@ t_nb	*check_arg(char **av, int ac)
 	char	**spl;
 	char	*join;
 
-	(void)ac;
+	if (ac < 3)
+		exit(0);
 	i = 1;
 	join = str_dup(av[i], str_len(av[i]));
 	while (av[++i])
