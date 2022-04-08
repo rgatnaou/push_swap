@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 18:30:56 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/19 16:46:58 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:30:21 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*str_join(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (NULL);
 	join = malloc(str_len(s1) + str_len(s2) + 2);
 	if (!join)
@@ -72,8 +72,6 @@ int	check_dgit(char *str)
 		return (0);
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	if (!str[i])
-		return (0);
 	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')

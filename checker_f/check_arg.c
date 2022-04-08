@@ -6,26 +6,36 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:08:37 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/26 15:29:33 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:30:56 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	count_list(t_nb *head)
+void	check_empty(char **av)
 {
-	int	count;
+	int	i;
+	int	j;
+	int	sp;
 
-	count = 0;
-	if (!head)
-		return (0);
-	first_node(head);
-	while (head)
+	i = 0;
+	while (av[i])
 	{
-		count++;
-		head = head->next;
+		j = 0;
+		sp = 1;
+		while (av[i][j])
+		{
+			if (av[i][j] != ' ')
+				sp = 0;
+			j++;
+		}
+		if (sp == 1)
+		{
+			write(2, "Error\n", 6);
+			exit(0);
+		}
+		i++;
 	}
-	return (count);
 }
 
 int	check_sort(t_nb *head)
@@ -54,7 +64,7 @@ void	check_nbr(char **spl, int i, int len)
 	{
 		if (ft_atoi(spl[j]) == ft_atoi(spl[i]))
 		{
-			write(2, "Error :Repeated Number.\n", 25);
+			write(2, "Error\n", 6);
 			ft_free(spl, len);
 			exit(1);
 		}
@@ -62,7 +72,7 @@ void	check_nbr(char **spl, int i, int len)
 	}
 	if (!check_dgit(spl[i]) || ft_atoi(spl[i]) != (int)ft_atoi(spl[i]))
 	{
-		write(2, "Error :Invalid Number.\n", 24);
+		write(2, "Error\n", 6);
 		ft_free(spl, len);
 		exit(1);
 	}
@@ -90,8 +100,6 @@ t_nb	*fill(char **spl, int len)
 		i++;
 	}
 	ft_free(spl, i);
-	if (check_sort(node))
-		exit(0);
 	return (node);
 }
 
@@ -102,8 +110,9 @@ t_nb	*check_arg(char **av, int ac)
 	char	**spl;
 	char	*join;
 
-	if (ac < 3)
+	if (ac < 2)
 		exit(0);
+	check_empty(av);
 	i = 1;
 	join = str_dup(av[i], str_len(av[i]));
 	while (av[++i])

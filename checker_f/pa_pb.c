@@ -6,11 +6,27 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:28:41 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/29 14:45:19 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:27:14 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+int	count_list(t_nb *head)
+{
+	int	count;
+
+	count = 0;
+	if (!head)
+		return (0);
+	first_node(head);
+	while (head)
+	{
+		count++;
+		head = head->next;
+	}
+	return (count);
+}
 
 t_stack	*f_stack(t_nb **a, t_nb **b)
 {

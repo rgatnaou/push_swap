@@ -6,11 +6,37 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:55:24 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/29 11:58:55 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:28:44 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+void	check_empty(char **av)
+{
+	int	i;
+	int	j;
+	int	sp;
+
+	i = 0;
+	while (av[i])
+	{
+		j = 0;
+		sp = 1;
+		while (av[i][j])
+		{
+			if (av[i][j] != ' ')
+				sp = 0;
+			j++;
+		}
+		if (sp == 1)
+		{
+			write(2, "Error\n", 6);
+			exit(0);
+		}
+		i++;
+	}
+}
 
 void	check_sort(t_nb *head)
 {
@@ -85,17 +111,14 @@ t_nb	*check_arg(char **av, int ac)
 	char	**spl;
 	char	*join;
 
-	(void)ac;
+	if (ac < 2)
+		exit(0);
 	i = 1;
+	check_empty(av);
 	join = str_dup(av[i], str_len(av[i]));
 	while (av[++i])
 		join = str_join(join, av[i]);
 	spl = ft_split(join, ' ');
-	if (!spl[0])
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
 	i = -1;
 	len = 0;
 	while (spl[len])
