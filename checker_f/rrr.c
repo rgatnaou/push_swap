@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:30:11 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/29 14:20:30 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/08 22:35:25 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	rra(t_stack *ab)
 	t_nb	*a;
 
 	a = first_node(ab->a);
-	reverse_rotate_node(&a);
+	if (ab->size_a)
+		reverse_rotate_node(&a);
 	ab->a = a;
 }
 
@@ -40,7 +41,8 @@ void	rrb(t_stack *ab)
 	t_nb	*b;
 
 	b = first_node(ab->b);
-	reverse_rotate_node(&b);
+	if (ab->size_b)
+		reverse_rotate_node(&b);
 	ab->b = b;
 }
 
@@ -51,8 +53,10 @@ void	rrr(t_stack *ab)
 
 	a = first_node(ab->a);
 	b = first_node(ab->b);
-	reverse_rotate_node(&b);
-	reverse_rotate_node(&a);
+	if (ab->size_b)
+		reverse_rotate_node(&b);
+	if (ab->size_a)
+		reverse_rotate_node(&a);
 	write(1, "rrr\n", 4);
 	ab->a = a;
 	ab->b = b;

@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:08:37 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/04/08 18:30:56 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/09 15:43:19 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	check_sort(t_nb *head)
 		if (tmp->prev->nb > tmp->nb)
 			return (0);
 	}
-	free_node(head);
 	return (1);
 }
 

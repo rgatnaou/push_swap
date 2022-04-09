@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:03:02 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/04/08 18:30:08 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/09 14:53:57 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,7 @@ int	main(int ac, char **av)
 	a = check_arg(av, ac);
 	ab = f_stack(&a, &b);
 	final_sort(ab);
-	a = ab->a;
+	free_node(ab->a);
+	free_node(ab->b);
+	free(ab);
 }

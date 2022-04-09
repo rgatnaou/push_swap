@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:55:24 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/04/08 18:28:44 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/08 22:44:30 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,8 @@ t_nb	*check_arg(char **av, int ac)
 
 	if (ac < 2)
 		exit(0);
-	i = 1;
 	check_empty(av);
+	i = 1;
 	join = str_dup(av[i], str_len(av[i]));
 	while (av[++i])
 		join = str_join(join, av[i]);

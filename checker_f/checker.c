@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:26:44 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/04/08 13:50:29 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/09 15:44:02 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,8 @@ int	main(int ac, char **av)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
+	free_node(ab->a);
+	free_node(ab->b);
+	free(ab);
+	
 }
