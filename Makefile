@@ -6,7 +6,7 @@
 #    By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 16:12:26 by rgatnaou          #+#    #+#              #
-#    Updated: 2022/04/08 18:29:40 by rgatnaou         ###   ########.fr        #
+#    Updated: 2022/04/10 23:21:59 by rgatnaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ FLAGS = -Wall -Wextra -Werror
 SRC = check_arg.c utils.c split.c list.c\
 		push_swap.c sort_list.c rr.c rrr.c ss.c pa_pb.c
 
-SRC_B = checker_f/check_arg.c checker_f/utils.c checker_f/split.c \
-		checker_f/rr.c checker_f/rrr.c checker_f/ss.c checker_f/list.c\
-		checker_f/pa_pb.c checker_f/checker.c checker_f/get_next_line.c
+SRC_B = bonus/check_arg.c bonus/utils.c bonus/split.c \
+		bonus/rr.c bonus/rrr.c bonus/ss.c bonus/list.c\
+		bonus/pa_pb.c bonus/checker.c bonus/get_next_line.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -31,7 +31,7 @@ NAME_B = checker
 
 HEADER = push_swap.h
 
-HEADER_B = checker_f/checker.h
+HEADER_B = bonus/checker.h
 
 all : $(NAME)
 

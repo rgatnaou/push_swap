@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:20:47 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/04/08 23:16:22 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/09 20:13:34 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	j;
 	char	*s3;
 
-	if (!s1)
-	{
-		s1 = (char *)malloc(1);
-		s1[0] = '\0';
-	}
 	len = 0;
 	len = str_len(s1);
 	len += str_len(s2);
@@ -57,31 +52,27 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (s3);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(void)
 {
-	int			r_rd;
-	char		*rd;
+	char		rd[2];
 	char		*res;
+	int			r_rd;
 
-	rd = malloc(2);
 	res = malloc(1);
-	if (!rd || !res)
-		exit(1);
-	res[0] = 0;
+	if (!res)
+		return (NULL);
 	r_rd = 1;
+	res[0] = 0;
 	while (!ft_strchr(res, '\n') && r_rd)
 	{
-		r_rd = read(fd, rd, 1);
-		if (r_rd == -1)
+		r_rd = read(0, rd, 1);
+		if (r_rd == -1 || !r_rd)
 		{
-			free(rd);
+			free(res);
 			return (NULL);
 		}
 		rd[r_rd] = '\0';
 		res = ft_strjoin(res, rd);
 	}
-	free(rd);
-	if (!res[0])
-		return (NULL);
 	return (res);
 }

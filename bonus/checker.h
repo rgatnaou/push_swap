@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:10:03 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/03/25 22:36:11 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/09 18:17:51 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		check_dgit(char *str);
 long	ft_atoi(char *str);
 void	ft_free(char **str, int len);
 t_nb	*check_arg(char **av, int ac);
-char	*get_next_line(int fd);
+char	*get_next_line(void);
 void	add_back(t_nb **old, t_nb *node);
 t_nb	*add_new(char *s, int index);
 void	free_node(t_nb *node);

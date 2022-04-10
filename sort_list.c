@@ -6,7 +6,7 @@
 /*   By: rgatnaou <rgatnaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:53:27 by rgatnaou          #+#    #+#             */
-/*   Updated: 2022/04/09 14:27:18 by rgatnaou         ###   ########.fr       */
+/*   Updated: 2022/04/10 23:13:10 by rgatnaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	push_in_b(t_stack *ab, int part)
 	int	trv;
 	int	max;
 	int	i;
-	// t_nb *tmp;
 
 	i = 1;
 	trv = 0;
@@ -81,13 +80,6 @@ void	push_in_b(t_stack *ab, int part)
 		if (trv == max)
 			i++;
 	}
-	// tmp =first_node(ab->b);
-	// while(tmp)
-	// {
-	// 	printf("%d  ",tmp->nb);
-	// 	tmp =tmp->next;
-	// }
-	// printf("\n ");
 }
 
 int	get_max(t_stack *ab)
